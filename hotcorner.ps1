@@ -3,10 +3,10 @@
 #----------------INFO----------------
 #
 # CC-BY-SA-NC Stella Ménier <stella.menier@gmx.de>
-# Project creator for Skrivanek GmbH
+# Hot corners
 #
-# Usage: powershell.exe -executionpolicy bypass -file ".\Rocketlaunch.ps1"
-# Usage: Compiled form, just double-click.
+# Usage: powershell.exe -executionpolicy bypass -file ".\hotcorner.ps1"
+# CTRL-C to stop it
 #
 #-------------------------------------
 
@@ -95,7 +95,6 @@ switch ($hotcorner_where)
         $X_to       = $hotcorner_sensitivity
         $Y_from     = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height - $hotcorner_sensitivity
         $Y_to       = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height
-
       }
 }
 
