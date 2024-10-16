@@ -215,6 +215,28 @@ switch ($hotcorner_what) {
             [System.Windows.Forms.SendKeys]::SendWait('%{TAB}')       
         }
     }
+
+    "explorer"   # Win + E
+    {
+        function action {
+            [KeySends.KeySend]::KeyDown("LWin")
+            [KeySends.KeySend]::KeyDown("E")
+            [KeySends.KeySend]::KeyUp("LWin")
+            [KeySends.KeySend]::KeyUp("E") 
+        }
+    }
+
+
+    "lock"   # Win + L
+    {
+        function action {
+            [KeySends.KeySend]::KeyDown("LWin")
+            [KeySends.KeySend]::KeyDown("L")
+            [KeySends.KeySend]::KeyUp("LWin")
+            [KeySends.KeySend]::KeyUp("L") 
+        }
+    }
+
 }
 
 
