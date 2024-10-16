@@ -1,4 +1,12 @@
-# Hotcorner
+
+
+<p align="center">
+  <img width="15%" align="center" src="assets/icon.png" alt="logo">
+</p>
+  <h1 align="center">Hot corner for windows</h1>
+<p align="center">
+  Hot corners. What it says on the tin.
+</p>
 
 Have hot corners on windows.
 This comes with no tray icon or configuration of any sort. Just summon it in a powershell window, with whatever you want
