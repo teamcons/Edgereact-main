@@ -252,6 +252,7 @@ switch ($hotcorner_what) {
 
 #========================================
 # The test is Forever
+Write-Output "[HOT CORNER] Ready!"
 while ($true)
 {
 
