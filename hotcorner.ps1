@@ -26,6 +26,52 @@ param(
     )
 
 
+if ($hotcorner_where -eq "help")
+{
+
+    Write-Host @"
+Hot corner for Windows
+by Stella Ménier - stella.menier@gmx.de
+
+Usage:
+.\hotcorner.ps1 where what reactivity sensitivity
+
+**Where:** Where the hot corner is situated
+either topleft, topright, bottomleft, bottomright
+default is topleft
+
+**What:** what the hotcorner triggers. It should be one of the following
+-    "overview": Shows an overview of all windows and desktop
+-    "winbutton": Window menu
+-    "showdesktop": Shows desktop
+-    "desktopright": Jump to Desktop on the right
+-    "desktopleft": Jump to Desktop on the left
+-    "closewindow": Close currently focused window (Dangerous !)
+-    "showclipboard": Show clipboard history
+-    "smallerwindow": unmaximizes, if already unmaximized, minimize it
+-    "screenshot": Take a screenshot
+-    "capslock": Toggle caps lock
+-    "alttab": Hit Alt+Tab once
+-    "explorer": Opens Explorer
+-    "lock": Locks the session
+default is overview
+
+
+**reactivity:** How aggressively the program checks the corner has been hit. In milliseconds.
+default is 400
+more means the hot corner sometimes do not trigger/react, less means your CPU needs coffee
+
+**sensitivity:** how huge in pixels the hot corner area is
+default is 30
+more can be disruptive, less you will need to hit the corner more frankly/accurately
+
+
+"@
+
+}
+
+
+
 
 
     #==========================================

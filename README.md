@@ -8,7 +8,7 @@ You can call up several instances idc
 
 
 **Usage:**
-> .\hotcorner.ps1 what where reactivity sensitivity
+> .\hotcorner.ps1 where what reactivity sensitivity
 
 Known bug: Sometimes the script gets stuck. Focus the terminal, hit enter, to unstuck it
 Defaults are topleft overview 400 30
