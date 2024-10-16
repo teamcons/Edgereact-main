@@ -35,9 +35,23 @@ You can generate a hotcorner.exe yourself with your own defaults by
 
 ### Arguments :
 
-**Where:** Where the hot corner is situated
-either topleft, topright, bottomleft, bottomright
+**Where:** Where the hot corner is situated. 
+
+-    topleft: Top, left corner of the screen
+-    topright: Top, right corner of the screen
+-    bottomleft: Bottom, left
+-    bottomright: Bottom, left
+-    topcenter: Center of the screen, at the top edge
+-    leftcenter: Center left edge
+-    rightcenter: Center right edge
+-    bottomcenter: Center, bottom edge
+
 default is topleft
+
+
+
+
+
 
 **What:** what the hotcorner triggers. It should be one of the following
 -    "overview": Shows an overview of all windows and desktop

@@ -37,7 +37,14 @@ Usage:
 .\hotcorner.ps1 where what reactivity sensitivity
 
 **Where:** Where the hot corner is situated
-either topleft, topright, bottomleft, bottomright
+-    topleft: Top, left corner of the screen
+-    topright: Top, right corner of the screen
+-    bottomleft: Bottom, left
+-    bottomright: Bottom, left
+-    topcenter: Center of the screen, at the top edge
+-    leftcenter: Center left edge
+-    rightcenter: Center right edge
+-    bottomcenter: Center, bottom edge
 default is topleft
 
 **What:** what the hotcorner triggers. It should be one of the following
@@ -110,12 +117,15 @@ Add-Type -TypeDefinition $source -ReferencedAssemblies "System.Windows.Forms"
 Add-Type -AssemblyName System.Windows.Forms
 
 
-
+# Screen info.
+$WIDTH  = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width
+$HEIGHT = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height
 
 # Take where the user wants their hotcorner
 # Calculate from there the screen region to keep watch of
 switch ($hotcorner_where)
 {
+    # Edges
     "topleft" {
         $X_from     = 0
         $X_to       = $hotcorner_sensitivity
@@ -124,23 +134,53 @@ switch ($hotcorner_where)
 
       }
     "topright" {
-        $X_from     = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width - $hotcorner_sensitivity
-        $X_to       = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width
+        $X_from     = $WIDTH - $hotcorner_sensitivity
+        $X_to       = $WIDTH
         $Y_from     = 0
         $Y_to       = $hotcorner_sensitivity
 
       }
     "bottomright" {
-        $X_from     = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width - $hotcorner_sensitivity
-        $X_to       = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width
-        $Y_from     = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height - $hotcorner_sensitivity
-        $Y_to       = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height
+        $X_from     = $WIDTH - $hotcorner_sensitivity
+        $X_to       = $WIDTH
+        $Y_from     = $HEIGHT - $hotcorner_sensitivity
+        $Y_to       = $HEIGHT
       }
     "bottomleft" {
         $X_from     = 0
         $X_to       = $hotcorner_sensitivity
-        $Y_from     = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height - $hotcorner_sensitivity
-        $Y_to       = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height
+        $Y_from     = $HEIGHT - $hotcorner_sensitivity
+        $Y_to       = $HEIGHT
+      }
+
+      # Middles
+      "topcenter" {
+        $X_from     = (($WIDTH / 2) - ($hotcorner_sensitivity/2))
+        $X_to       = (($WIDTH / 2) + ($hotcorner_sensitivity/2))
+        $Y_from     = 0
+        $Y_to       = $hotcorner_sensitivity
+      }
+
+      "leftcenter" {
+        $X_from     = 0
+        $X_to       = $hotcorner_sensitivity
+        $Y_from     = (($HEIGHT / 2) - ($hotcorner_sensitivity/2))
+        $Y_to       = (($HEIGHT / 2) + ($hotcorner_sensitivity/2))
+      }
+
+      "rightcenter" {
+        $X_from     = $WIDTH - $hotcorner_sensitivity
+        $X_to       = $WIDTH
+        $Y_from     = (($HEIGHT / 2) - ($hotcorner_sensitivity/2))
+        $Y_to       = (($HEIGHT / 2) + ($hotcorner_sensitivity/2))
+      }
+
+    # Will anypony ever use this ??
+      "bottomcenter" {
+        $X_from     = (($WIDTH / 2) - ($hotcorner_sensitivity/2))
+        $X_to       = (($WIDTH / 2) + ($hotcorner_sensitivity/2))
+        $Y_from     = $HEIGHT - $hotcorner_sensitivity
+        $Y_to       = $HEIGHT
       }
 }
 
