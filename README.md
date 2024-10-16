@@ -63,3 +63,11 @@ more means the hot corner sometimes do not trigger/react, less means your CPU ne
 **sensitivity:** how huge in pixels the hot corner area is
 default is 30
 more can be disruptive, less you will need to hit the corner more frankly/accurately
+
+
+
+
+### Thanks
+
+Icon
+<a target="_blank" href="https://icons8.com/icon/VmguaeSZqhrm/full-page-view">Full Page View</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

@@ -11,6 +11,7 @@ else
 
 ps2exe `
 -inputFile hotcorner.ps1 `
+-iconFile $ScriptPath\assets\icon.ico `
 -noConsole `
 -noOutput `
 -exitOnCancel `
@@ -22,4 +23,4 @@ ps2exe `
 -Verbose `
 -outputFile hotcorner.exe
 
-#-iconFile $ScriptPath\assets\Assistant.ico `
+#
