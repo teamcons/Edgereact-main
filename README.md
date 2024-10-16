@@ -10,18 +10,27 @@ You can call up several instances idc
 **Usage:**
 > .\hotcorner.ps1 what where reactivity sensitivity
 
+Known bug: Sometimes the script gets stuck. Focus the terminal, hit enter, to unstuck it
 Defaults are topleft overview 400 30
 See below for details
+
+
+OR
 
 You can double-click hotcorner.exe, but 
 -It tends to be flagged as virus
 -It then runs with the defaults
 -You need the task manager to stop it
+-It is more reliable however
 
 You can generate a hotcorner.exe yourself with your own defaults by
--editing hotcorner.ps1 (the param block)
+-editing hotcorner.ps1 (the param block at start sets the defaults)
 -installing ps2exe
+> Install-Module -Name ps2exe
+
 -running build.ps1
+> ./build.ps1
+
 
 
 ### Arguments :
