@@ -77,6 +77,19 @@ more can be disruptive, less you will need to hit the corner more frankly/accura
 
 }
 
+if ($MyInvocation.MyCommand.CommandType -eq "ExternalScript")
+    { $global:ScriptPath = Split-Path -Parent -Path $MyInvocation.MyCommand.Definition }
+else
+    {$global:ScriptPath = Split-Path -Parent -Path ([Environment]::GetCommandLineArgs()[0]) 
+    if (!$ScriptPath){ $global:ScriptPath = "." } }
+
+    
+try {
+    Import-Module $ScriptPath\settings.ps1    
+}
+catch {
+    Write-Output "Oh."
+}
 
 
 
