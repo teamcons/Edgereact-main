@@ -87,13 +87,10 @@ else
     {$global:ScriptPath = Split-Path -Parent -Path ([Environment]::GetCommandLineArgs()[0]) 
     if (!$ScriptPath){ $global:ScriptPath = "." } }
 
-    
-try {
-    Import-Module $ScriptPath\settings.ps1    
-}
-catch {
-    Write-Output "Oh."
-}
+
+# Try loading settings if any
+Import-Module $ScriptPath\settings.ps1 2>$null
+
 
 
 
@@ -374,7 +371,7 @@ switch ($hotcorner_what) {
             #$ocrEngine = [Windows.Media.Ocr.OcrEngine]::TryCreateFromLanguage('en-US')
         
         
-        Function action {
+        function action {
             Write-Host ('*'*40)
             # Get old clipboard
             #$oldClipboard = [System.Windows.Forms.Clipboard]::GetDataObject()
