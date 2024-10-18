@@ -75,6 +75,8 @@ default is topleft
 -    "alttab": Hit Alt+Tab once
 -    "explorer": Opens Explorer
 -    "lock": Locks the session
+-    "OCR": Allows to select a region of the screen, put detected text in clipboard
+
 default is overview
 
 
